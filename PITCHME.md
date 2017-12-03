@@ -37,11 +37,28 @@
 
 ---
 @title[Instant App - AS How?]
-#### App split by module
+#### App split by module - Android Studio
 ![ASStructure](assets/images/aia-studio-multi.png)
 
 ---
+@title[Instant App - Gradle]
+#### AIA Gradle config
+```lang=gradle
+apply plugin: 'com.android.feature'
+android {
+  compileSdkVersion 26
+  baseFeature true
+  ...
+}
+dependencies {
+  application project(':app-installed')
+  feature project(':feature-home')
+  feature project(":feature-details")
+  ...
+}
+```
 
+---
 #### No more <span class="gray">Keynote</span>.
 #### No more <span class="gray">Powerpoint</span>.
 <br>
