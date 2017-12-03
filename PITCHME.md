@@ -62,21 +62,6 @@ dependencies {
 @[7](the base feature must know the application module, needed for the `applicationId` and flavors)
 @[8-9](feature modules that this base feature will serve)
 
-#### feature-home/build.gradle
-```gradle
-apply plugin: 'com.android.feature'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-android { ... }
-dependencies {
-    implementation project(':base')
-...   
-}
-```
-
-@[12](very similar to `com.android.library`, Google says)
-@[17](dependency on base module)
-
 ---
 @title[Instant App - Installed/Gradle]
 #### app-installed/build.gradle
@@ -127,6 +112,17 @@ dependencies {
 @[6](dependency on base module)
 
 ---
+@title[Instant App - APK Installed]
+#### Installed APK
+![InstalledAPK](assets/images/aia-apk-installed.png)
+
+---
+@title[Instant App - APK Instant]
+#### Installed APK
+![InstantAPK](assets/images/aia-apk-instant.png)
+
+---
+
 #### No more <span class="gray">Keynote</span>.
 #### No more <span class="gray">Powerpoint</span>.
 <br>
