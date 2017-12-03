@@ -20,7 +20,10 @@
 ### Remove install friction
 > Vimeo has seen sessions more than double in length (+130% increase) and native app [users increase 20%.][1] 
 
-[1]: https://developer.android.com/stories/instant-apps/vimeo.html 
+> NYTimes Crossword is used more frequently and those using the instant app have [more than doubled the number of sessions.][2] 
+
+[1]: https://developer.android.com/stories/instant-apps/vimeo.html
+[2]: https://developer.android.com/stories/instant-apps/nytimes-crossword.html
 
 ---
 
