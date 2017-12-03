@@ -28,7 +28,11 @@
 [2]: https://developer.android.com/stories/instant-apps/nytimes-crossword.html
 
 ---
+@title[Instant App - How?]
 
+![Structure](/assets/aia-features-multi.png)
+
+---
 #### No more <span class="gray">Keynote</span>.
 #### No more <span class="gray">Powerpoint</span>.
 <br>
