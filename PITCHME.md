@@ -124,8 +124,15 @@ dependencies {
 ---
 @title[Multi-Module - Google I/0 2017 Video]
 
-#### Multi-Module video
-![Video](https://www.youtube.com/embed/7ll-rkLCtyk?rel=0&amp;start=1480)
+#### Modularity is painful
+![Video](https://www.youtube.com/embed/7ll-rkLCtyk?rel=0&amp;start=1420)
+
+
+---
+@title[Multi-Module - Google I/0 2017 Video]
+
+#### Modularity and Dagger2
+![Video](https://www.youtube.com/embed/7ll-rkLCtyk?rel=0&amp;start=1965)
 
 
 ---
