@@ -9,11 +9,15 @@
 
 ---
 
-@title[Instant App]
+@title[Instant App - What?]
 
-### Android Apps Without Installation
+#### Android Apps Without Installation
 ![Video](https://www.youtube.com/embed/N1zZ2F0N86s)
 
+
+---
+@title[Instant App - Why?]
+#### Remove install friction
 > Vimeo has seen sessions more than double in length (+130% increase) and native app users increase 20%. 
 
 ---
