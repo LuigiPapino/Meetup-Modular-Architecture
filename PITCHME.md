@@ -30,9 +30,9 @@
 ---
 @title[Instant App - How?]
 ### App split by module
-![Structure](assets/images/aia-how-structure.png)[3]
+![Structure](assets/images/aia-how-structure.png)[^3]
 
-[3]: https://developer.android.com/topic/instant-apps/getting-started/structure.html "AIA Structure" 
+[^3]: https://developer.android.com/topic/instant-apps/getting-started/structure.html "AIA Structure" 
 
 
 ---
