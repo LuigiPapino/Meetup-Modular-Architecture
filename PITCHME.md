@@ -36,6 +36,12 @@
 
 
 ---
+@title[Instant App - AS How?]
+### App split by module
+![Structure](assets/images/aia-studio-multi.png)
+
+---
+
 #### No more <span class="gray">Keynote</span>.
 #### No more <span class="gray">Powerpoint</span>.
 <br>
