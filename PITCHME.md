@@ -18,9 +18,9 @@
 ---
 @title[Instant App - Why?]
 ### Remove install friction
-> Vimeo has seen sessions more than double in length (+130% increase) and native app <b>users increase 20%.</b> [^1]
+> Vimeo has seen sessions more than double in length (+130% increase) and native app <b>users increase 20%.</b> [\[1\]]
 
-[^1]: https://developer.android.com/stories/instant-apps/vimeo.html 
+[\[1\]]: https://developer.android.com/stories/instant-apps/vimeo.html 
 
 ---
 
