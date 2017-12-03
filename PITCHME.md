@@ -5,17 +5,15 @@
 ### Modular Architecture with Android Gradle Plugin 3.0
 <br>
 <br>
-<span class="byline">[Luigi Papino luigi.papino@gmail.com ]</span>
+<span class="byline">[luigi.papino@gmail.com ]</span>
 
 ---
 
-@title[PITCHME.md]
+@title[Instant App]
 
-#### GitPitch turns <span class="gold">PITCHME.md</span> into
-#### interactive,
-#### online and offline slideshows.
-<br>
-<span class="aside">Just like this one...</span>
+![Video](https://youtu.be/N1zZ2F0N86s)
+
+
 
 ---
 
