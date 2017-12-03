@@ -46,7 +46,6 @@
 ```lang=gradle
 apply plugin: 'com.android.feature'
 android {
-  compileSdkVersion 26
   baseFeature true
   ...
 }
