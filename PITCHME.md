@@ -43,7 +43,7 @@
 ---
 @title[Instant App - Gradle]
 #### AIA Gradle config
-```lang=gradle
+```gradle
 apply plugin: 'com.android.feature'
 android {
   baseFeature true
