@@ -1,6 +1,6 @@
 @title[Introduction]
 
-#<span class="gold">Instant App</span>
+# <span class="gold">Instant App</span>
 
 ### Modular Architecture with Android Gradle Plugin 3.0
 <br>
