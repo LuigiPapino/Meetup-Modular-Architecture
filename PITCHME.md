@@ -30,7 +30,7 @@
 ---
 @title[Instant App - How?]
 
-![Structure](assets/images/aia-features-multi.png)
+![Structure](assets/images/aia-how-structure.png)
 
 ---
 #### No more <span class="gray">Keynote</span>.
