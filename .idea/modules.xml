@@ -3,10 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MeetupModularArchitecture.iml" filepath="$PROJECT_DIR$/MeetupModularArchitecture.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-installed/app.iml" filepath="$PROJECT_DIR$/app-installed/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-instant/instantapp.iml" filepath="$PROJECT_DIR$/app-instant/instantapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
-      <module fileurl="file://$PROJECT_DIR$/feature_home/feature_home.iml" filepath="$PROJECT_DIR$/feature_home/feature_home.iml" />
-      <module fileurl="file://$PROJECT_DIR$/instantapp/instantapp.iml" filepath="$PROJECT_DIR$/instantapp/instantapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feature-details/feature-details.iml" filepath="$PROJECT_DIR$/feature-details/feature-details.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feature-home/feature_home.iml" filepath="$PROJECT_DIR$/feature-home/feature_home.iml" />
     </modules>
   </component>
 </project>
