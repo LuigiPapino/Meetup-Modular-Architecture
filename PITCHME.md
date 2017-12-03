@@ -41,7 +41,7 @@
 ![ASStructure](assets/images/aia-studio-multi.png)
 
 ---
-@title[Instant App - Gradle]
+@title[Instant App - Base/Gradle]
 #### base/build.gradle
 ```gradle
 apply plugin: 'com.android.feature'
@@ -63,6 +63,39 @@ dependencies {
 @[8-9](feature modules that this base feature will serve)
 
 ---
+@title[Instant App - Installed/Gradle]
+#### app-installed/build.gradle
+```gradle
+apply plugin: 'com.android.application'
+android { ... }
+dependencies {
+    implementation project(':feature-home')
+    implementation project(":feature-details")
+    implementation project(':base')
+}
+
+```
+
+@[1](nothing changed)
+@[4-6](features and base modules that are part of the installed app)
+
+---
+@title[Instant App - Instant/Gradle]
+#### app-instant/build.gradle
+```gradle
+apply plugin: 'com.android.instantapp'
+dependencies {
+    implementation project(':feature-home')
+    implementation project(":feature-details")
+    implementation project(':base')
+}
+```
+
+@[1](instantapp plugin that will generate the .zip file with all the features)
+@[3-5](features and base modules that are part of the installed app)
+
+---
+
 #### No more <span class="gray">Keynote</span>.
 #### No more <span class="gray">Powerpoint</span>.
 <br>
