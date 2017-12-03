@@ -42,8 +42,8 @@
 
 ---
 @title[Instant App - Base/Gradle]
-```gradle
 #### base/build.gradle
+```gradle
 apply plugin: 'com.android.feature'
 android {
   baseFeature true
@@ -55,8 +55,15 @@ dependencies {
   feature project(":feature-details")
   ...
 }
+```
+
+@[1](very similar to `com.android.library`, Google says)
+@[3](flag this module as base feature for this project)
+@[7](the base feature must know the application module, needed for the `applicationId` and flavors)
+@[8-9](feature modules that this base feature will serve)
 
 #### feature-home/build.gradle
+```gradle
 apply plugin: 'com.android.feature'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -67,14 +74,8 @@ dependencies {
 }
 ```
 
-@[2](very similar to `com.android.library`, Google says)
-@[4](flag this module as base feature for this project)
-@[8](the base feature must know the application module, needed for the `applicationId` and flavors)
-@[9-10](feature modules that this base feature will serve)
-
-@[14](very similar to `com.android.library`, Google says)
-@[19](dependency on base module)
-
+@[1](very similar to `com.android.library`, Google says)
+@[6](dependency on base module)
 
 ---
 @title[Instant App - Installed/Gradle]
