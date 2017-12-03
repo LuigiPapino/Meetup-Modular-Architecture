@@ -74,8 +74,8 @@ dependencies {
 }
 ```
 
-@[1](very similar to `com.android.library`, Google says)
-@[6](dependency on base module)
+@[12](very similar to `com.android.library`, Google says)
+@[17](dependency on base module)
 
 ---
 @title[Instant App - Installed/Gradle]
