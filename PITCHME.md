@@ -1,11 +1,11 @@
 @title[Introduction]
 
-# Git<span class="gold">Pitch</span>
+#<span class="gold">Instant App</span>
 
-#### Markdown Presentations For Everyone on Git.*
+### Modular Architecture with Android Gradle Plugin 3.0
 <br>
 <br>
-<span class="byline">[ GitHub, GitLab, Bitbucket, GitBucket, Gitea, Gogs ]</span>
+<span class="byline">[Luigi Papino luigi.papino@gmail.com ]</span>
 
 ---
 
