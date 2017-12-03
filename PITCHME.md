@@ -42,7 +42,7 @@
 
 ---
 @title[Instant App - Gradle]
-#### AIA Gradle config
+#### base/build.gradle
 ```gradle
 apply plugin: 'com.android.feature'
 android {
