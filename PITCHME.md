@@ -122,17 +122,28 @@ dependencies {
 ![InstantAPK](assets/images/aia-apk-instant.png)
 
 ---
-@title[Multi-Module - Google I/0 2017 Video]
+@title[Instant App - Issues]
+- Multi-features not working
+- Proguard not working
+- Base module resources need to be referenced full-scoped
+- ButterKnife/AndroidAnnotation needs workaround for view-injection
+ 
+---
+@title[Multi-Module - Structure]
+#### AIA not necessary to build a multi-module project 
+![MM-AS-Structure](assets/images/mm-structure.png)
+
+---
+@title[Multi-Module - Google I/0 2017 Painful]
 
 #### Modularity is painful
 ![Video](https://www.youtube.com/embed/7ll-rkLCtyk?rel=0&amp;start=1420)
 
 
 ---
-@title[Multi-Module - Google I/0 2017 Video]
+@title[Multi-Module - Google I/0 2017 Dagger2]
 
 #### Modularity and Dagger2
 ![Video](https://www.youtube.com/embed/7ll-rkLCtyk?rel=0&amp;start=1965)
-
 
 ---
