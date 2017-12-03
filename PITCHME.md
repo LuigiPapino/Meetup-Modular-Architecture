@@ -11,8 +11,7 @@
 
 @title[Instant App]
 
-![Video](https://youtu.be/N1zZ2F0N86s)
-
+![Video](https://www.youtube.com/embed/N1zZ2F0N86s)
 
 
 ---
