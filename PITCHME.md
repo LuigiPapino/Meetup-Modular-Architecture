@@ -38,7 +38,7 @@
 ---
 @title[Instant App - AS How?]
 ### App split by module
-![Structure](assets/images/aia-studio-multi.png)
+![AS Structure](assets/images/aia-studio-multi.png)
 
 ---
 
