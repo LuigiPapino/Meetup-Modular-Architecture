@@ -57,6 +57,11 @@ dependencies {
 }
 ```
 
+@[1](very similar to `com.android.library`, Google says)
+@[3](flag this module as base feature for this project)
+@[7](the base feature must know the application module, needed for the `applicationId` and flavors)
+@[8-9](feature modules that this base feature will serve)
+
 ---
 #### No more <span class="gray">Keynote</span>.
 #### No more <span class="gray">Powerpoint</span>.
