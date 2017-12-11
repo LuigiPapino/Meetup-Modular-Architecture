@@ -20,8 +20,7 @@ class ApiService(private val okHttp: OkHttp)
 class UserRepository
 
 @Singleton
-@Component(
-    modules = [(NetworkModule::class), (RepositoryModule::class)])
+@Component(modules = [(NetworkModule::class), (RepositoryModule::class)])
 interface AppComponent : AndroidInjector<Application> {
   val apiService: ApiService
   val userRepository: UserRepository

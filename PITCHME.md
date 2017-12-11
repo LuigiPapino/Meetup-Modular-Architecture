@@ -220,7 +220,7 @@ object NetworkModule {
 @title[Dagger2 - Application Injection]
 ##### Dagger2 - Application Injection 
 ```kotlin
-class DropApplication : BaseApplication() {
+class MyApplication : BaseApplication() {
   @Inject
   internal lateinit var apiService: ApiService
   override fun onCreate() {
@@ -357,5 +357,23 @@ class BrowserActivity : AppCompatActivity() {
 @title[Dagger2 - Components OkHttp]
 ##### Dependency Graph - Bind graph access
 ![DI-Components](assets/images/dagger2-components-breakdown-okhttp.png)
+
+---
+
+---
+
+@title[Dagger2 - Application Component]
+##### Dagger2 - Application Component 
+```kotlin
+@Singleton
+@Component(modules = arrayOf(NetworkModule::class, RepositoryModule::class))
+interface ApplicationComponent : AndroidInjector<MyApplication> {
+  val userRepository: UserRepository
+  val apiService: ApiService
+  val okHttp: OkHttp
+}
+```
+
+@[2](explose okHttp)
 
 ---
