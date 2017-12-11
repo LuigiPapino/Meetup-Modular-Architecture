@@ -213,7 +213,7 @@ object NetworkModule {
 @[6](subcomponent builder)
 @[9-10](module declaration)
 @[11](this is a provide method for UserRepository)
-@[13-15](build the dependency)
+@[14-16](build the dependency)
 
 
 ---
