@@ -292,11 +292,23 @@ class BrowserActivity: AppCompatActivity(){
         .browserBuilder()
         .build()
         .inject(this)
-    presenter.letMePass()
+    presenter.iHateAndroid()
   }
 }
 ```
 @[7](retrieve AppComponent from Application )
 @[8-10](build and inject)
 @[11](presenter can be used)
+---
+
+@title[Dagger2 - Subcomponent Builders]
+##### Dependency Graph - Subcomponent Builders
+![InstalledAPK](assets/images/dagger2-subcomponent.png)
+
+---
+
+@title[Dagger2 - Modules]
+##### Dependency Graph - Modules 
+![InstalledAPK](assets/images/dagger2-subcomponent-with-modules.png)
+
 ---
