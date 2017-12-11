@@ -360,8 +360,6 @@ class BrowserActivity : AppCompatActivity() {
 
 ---
 
----
-
 @title[Dagger2 - Application Component]
 ##### Dagger2 - Application Component 
 ```kotlin
@@ -374,6 +372,6 @@ interface ApplicationComponent : AndroidInjector<MyApplication> {
 }
 ```
 
-@[2](explose okHttp)
+@[6](explose okHttp)
 
 ---
