@@ -186,15 +186,15 @@ dependencies {
 
 ---
 
-@title[Dagger2 - Application, code]
-##### Dependency Graph - Application
+@title[Dagger2 - Application, component]
+##### Dagger2 - Application Component 
 ```kotlin
 @Singleton
 @Component(modules = arrayOf(NetworkModule::class, RepositoryModule::class))
 interface ApplicationComponent : AndroidInjector<MyApplication> {
   val userRepository: UserRepository
   val apiService: ApiService
-  
+  ...
   fun browserSubComponentBuilder(): BrowserSubComponent.Builder
 }
 
@@ -206,6 +206,7 @@ object NetworkModule {
   fun provideUserRepository(sharedPrefs: SharedPreference): UserRepository {
     return UserRepository(sharedPrefs)
   }
+  ...
  }
 ```
 
@@ -216,7 +217,26 @@ object NetworkModule {
 @[12](this is a provide method for UserRepository)
 @[15-17](build the dependency)
 ---
-
+@title[Dagger2 - Application, injection]
+##### Dagger2 - Application Injection 
+```kotlin
+class DropApplication : BaseApplication() {
+  @Inject
+  internal lateinit var apiService: ApiService
+  ...
+  override fun onCreate() {
+    appComponent = DaggerApplicationComponent
+      .builder()
+      .create(this)
+    appComponent.inject(this)
+  }
+  ...
+}
+```
+@[2-3](dependecy to be injected)
+@[6-8](component creation)
+@[9](application injection)
+---
 @title[Dagger2 - Main]
 ##### Dependency Graph - Browser
 ![InstalledAPK](assets/images/dagger2-browser.png)
