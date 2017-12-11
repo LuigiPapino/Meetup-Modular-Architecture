@@ -347,3 +347,9 @@ class BrowserActivity : AppCompatActivity() {
 @[7-8](inject as usual)
 
 ---
+
+@title[Dagger2 - Components OkHttp]
+##### Dependency Graph - Bind graph access
+![DI-Components](assets/images/dagger2-components-okhttp.png)
+
+---
