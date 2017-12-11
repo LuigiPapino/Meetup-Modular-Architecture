@@ -12,21 +12,21 @@
 @title[Instant App - What? email flow]
 
 #### Android Apps Without Installation
-![Video](https://youtu.be/fGdiOeYuORE)
+![Video](https://www.youtube.com/embed/fGdiOeYuORE)
 
 
 ---
 @title[Instant App - What? install prompt]
 
 #### Android Apps Without Installation
-![Video](https://youtu.be/b-dMmGOB0nA)
+![Video](https://www.youtube.com/embed/b-dMmGOB0nA)
 
 
 ---
 @title[Instant App - What? show case]
 
 #### Android Apps Without Installation
-![Video](https://youtu.be/JUykpWHtgec)
+![Video](https://www.youtube.com/embed/JUykpWHtgec)
 
 
 ---
@@ -142,6 +142,7 @@ dependencies {
 - Proguard not working
 - Base module resources need to be referenced full-scoped
 - ButterKnife/AndroidAnnotation needs workaround for view-injection
+- 4MB base+feature size limit
  
 ---
 @title[Multi-Module - Structure]
@@ -162,9 +163,29 @@ dependencies {
 ![Video](https://www.youtube.com/embed/7ll-rkLCtyk?rel=0&amp;start=1965)
 
 ---
+@title[Dagger2 - Definition]
+
+### Dagger2
+> [Dagger 2 is a compile-time evolution approach to dependency injection.][1] Taking the approach started in Dagger 1.x to its ultimate conclusion, Dagger 2.x eliminates all reflection, and improves code clarity by removing the traditional ObjectGraph/Injector in favor of user-specified @Component interfaces.
+
+[1]: https://github.com/google/dagger
+
+---
+
+@title[Dagger2 - Dependency Graph]
+#### Installed APK
+![InstalledAPK](assets/images/dagger2-main.png)
+
+---
+
+@title[Dagger2 - Application]
+#### Installed APK
+![InstalledAPK](assets/images/dagger2-application.png)
+
+---
 
 @title[Dagger2 - Main]
 #### Installed APK
-![InstalledAPK](assets/images/dagger2-main.png)
+![InstalledAPK](assets/images/dagger2-browser.png)
 
 ---
