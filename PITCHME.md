@@ -162,3 +162,9 @@ dependencies {
 ![Video](https://www.youtube.com/embed/7ll-rkLCtyk?rel=0&amp;start=1965)
 
 ---
+
+@title[Dagger2 - Main]
+#### Installed APK
+![InstalledAPK](assets/images/dagger2-main.png)
+
+---
