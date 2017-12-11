@@ -260,11 +260,17 @@ interface BrowserSubComponent : AndroidInjector<AppCompatActivity> {
 
 @Module
 object BrowserModule{
-  @Provides
-  @Browser
-  @JvmStatic
+  @Browser @Provides @JvmStatic
   fun provideBrowserService(okHttp: OkHttp): BrowserService {
     return BrowserService(okHttp)
+  }
+  @Browser @Provides @JvmStatic
+  fun provideBrowserInteractor(browserService: BrowserService): BrowserInteractor {
+    return BrowserInteractor(browserService)
+  }
+  @Browser @Provides @JvmStatic
+  fun provideBrowserPresenter(interactor: BrowserInteractor): BrowserPresenter {
+    return BrowserPresenter(interactor)
   }
 }
 ```
@@ -272,14 +278,13 @@ object BrowserModule{
 
 ---
 
----
 @title[Dagger2 - Browser, injection]
 ##### Dagger2 - Browser injection
  
 ```kotlin
 class BrowserActivity: AppCompatActivity(){
   @Inject
-  internal lateinit var browserService: BrowserService
+  internal lateinit var presenter: BrowserPresenter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -287,6 +292,7 @@ class BrowserActivity: AppCompatActivity(){
         .browserBuilder()
         .build()
         .inject(this)
+    presenter.letMePass()
   }
 }
 ```
