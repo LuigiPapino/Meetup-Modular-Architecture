@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity
 import dagger.Component
 import dagger.Module
 import dagger.Provides
-import dagger.Subcomponent
 import dagger.android.AndroidInjector
 import javax.inject.Inject
 import javax.inject.Scope
@@ -18,18 +17,15 @@ import kotlin.annotation.AnnotationRetention.RUNTIME
  */
 
 class OkHttp
-
 class ApiService(private val okHttp: OkHttp)
 class UserRepository
 
 @Singleton
 @Component(
-    modules = [(NetworkModule::class), (RepositoryModule::class), (SubcomponentModule::class)])
+    modules = [(NetworkModule::class), (RepositoryModule::class)])
 interface AppComponent : AndroidInjector<Application> {
   val apiService: ApiService
   val userRepository: UserRepository
-
-  fun browserBuilder(): BrowserSubComponent.Builder
 }
 
 @Module
@@ -61,11 +57,6 @@ object RepositoryModule {
 
 }
 
-@Module(subcomponents = [(BrowserSubComponent::class)])
-object SubcomponentModule {
-
-}
-
 
 @Scope
 @kotlin.annotation.Retention(RUNTIME)
@@ -75,13 +66,13 @@ annotation class Browser
 class BrowserService(okHttp: OkHttp)
 
 @Browser
-@Subcomponent(modules = [(BrowserModule::class)])
-interface BrowserSubComponent : AndroidInjector<AppCompatActivity> {
+@Component(modules = [(BrowserModule::class)], dependencies = [(AppComponent::class)])
+interface BrowserComponent : AndroidInjector<AppCompatActivity> {
   val browserService: BrowserService
 
-  @Subcomponent.Builder
+  @Component.Builder
   abstract class Builder : AndroidInjector.Builder<AppCompatActivity>() {
-
+    abstract fun plus(component: AppComponent): Builder
   }
 }
 
@@ -110,7 +101,6 @@ class BrowserActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    (application as MyApplication).component.browserBuilder().build()
-        .inject(this)
+
   }
 }

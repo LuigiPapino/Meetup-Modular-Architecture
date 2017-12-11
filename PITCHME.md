@@ -303,12 +303,33 @@ class BrowserActivity: AppCompatActivity(){
 
 @title[Dagger2 - Subcomponent Builders]
 ##### Dependency Graph - Subcomponent Builders
-![InstalledAPK](assets/images/dagger2-subcomponent.png)
+![DI-Subcomponent](assets/images/dagger2-subcomponent.png)
 
 ---
 
 @title[Dagger2 - Modules]
 ##### Dependency Graph - Modules 
-![InstalledAPK](assets/images/dagger2-subcomponent-with-modules.png)
+![DI-SubComponent+Modules](assets/images/dagger2-subcomponent-with-modules.png)
 
+---
+
+@title[Dagger2 - Components Dependency]
+##### Dependency Graph - Components
+![DI-Components](assets/images/dagger2-components-breakdown.png)
+
+---
+@title[Dagger2 - Components Dependency]
+##### Dependency Graph - Components
+```kotlin
+@Browser
+@Component(modules = [(BrowserModule::class)], dependencies = [(AppComponent::class)])
+interface BrowserComponent : AndroidInjector<AppCompatActivity> {
+  @Component.Builder
+  abstract class Builder: AndroidInjector.Builder<AppCompatActivity>(){
+      abstract fun plus(component: AppComponent): Builder
+  }
+}
+```
+@[1](SubComponent --> Component; dependency to AppComponent)
+@[6](explicity declare to Dagger2 that this builder will accept and AppComponent instance)
 ---
