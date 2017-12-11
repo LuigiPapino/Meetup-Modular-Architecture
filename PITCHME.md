@@ -316,7 +316,8 @@ class BrowserActivity: AppCompatActivity(){
 ##### Dependency Graph - Browser Component
 ```kotlin
 @Browser
-@Component(modules = [(BrowserModule::class)], dependencies = [(AppComponent::class)])
+@Component(modules = [(BrowserModule::class)],
+      dependencies = [(AppComponent::class)])
 interface BrowserComponent : AndroidInjector<AppCompatActivity> {
   @Component.Builder
   abstract class Builder: AndroidInjector.Builder<AppCompatActivity>(){
