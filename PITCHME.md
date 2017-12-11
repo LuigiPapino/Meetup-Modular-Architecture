@@ -138,10 +138,12 @@ dependencies {
 ---
 @title[Instant App - Issues]
 ### AIA Issues
-- Multi-features not working
+- Multi-features not working (fixed last week, Google says)
 - Proguard not working
 - Base module resources need to be referenced full-scoped
+- Resources in the feature manifest file has to be in the base module
 - ButterKnife/AndroidAnnotation needs workaround for view-injection
+- Crashlytics has to be applied in the base.gradle
 - 4MB base+feature size limit
  
 ---
@@ -173,19 +175,19 @@ dependencies {
 ---
 
 @title[Dagger2 - Dependency Graph]
-#### Installed APK
+#### Dependency Graph
 ![InstalledAPK](assets/images/dagger2-main.png)
 
 ---
 
 @title[Dagger2 - Application]
-#### Installed APK
+##### Dependency Graph - Application
 ![InstalledAPK](assets/images/dagger2-application.png)
 
 ---
 
 @title[Dagger2 - Main]
-#### Installed APK
+##### Dependency Graph - Browser
 ![InstalledAPK](assets/images/dagger2-browser.png)
 
 ---
