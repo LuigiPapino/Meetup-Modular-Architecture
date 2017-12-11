@@ -132,7 +132,7 @@ dependencies {
 
 ---
 @title[Instant App - APK Instant]
-#### Installed APK
+#### Instant zip
 ![InstantAPK](assets/images/aia-apk-instant.png)
 
 ---
