@@ -2,17 +2,31 @@
 
 # <span class="gold">Instant App</span>
 
-### Modular Architecture with Android Gradle Plugin 3.0
+### Multi-Modular Architecture with Android Gradle Plugin 3.0
 <br>
 <br>
-<span class="byline">[luigi.papino@gmail.com ]</span>
+<span class="byline">[luigi.papino@gmail.com - I Hate Android]</span>
 
 ---
 
-@title[Instant App - What?]
+@title[Instant App - What? email flow]
 
 #### Android Apps Without Installation
-![Video](https://www.youtube.com/embed/N1zZ2F0N86s)
+![Video](https://youtu.be/fGdiOeYuORE)
+
+
+---
+@title[Instant App - What? install prompt]
+
+#### Android Apps Without Installation
+![Video](https://youtu.be/b-dMmGOB0nA)
+
+
+---
+@title[Instant App - What? show case]
+
+#### Android Apps Without Installation
+![Video](https://youtu.be/JUykpWHtgec)
 
 
 ---
