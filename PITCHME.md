@@ -176,17 +176,17 @@ dependencies {
 
 @title[Dagger2 - Dependency Graph]
 #### Dependency Graph
-![InstalledAPK](assets/images/dagger2-main.png)
+![DI-main](assets/images/dagger2-main.png)
 
 ---
 
 @title[Dagger2 - Application]
 ##### Dependency Graph - Application
-![InstalledAPK](assets/images/dagger2-application.png)
+![DI-Application](assets/images/dagger2-application.png)
 
 ---
 
-@title[Dagger2 - Application, component]
+@title[Dagger2 - Application Component]
 ##### Dagger2 - Application Component 
 ```kotlin
 @Singleton
@@ -205,11 +205,7 @@ object NetworkModule {
   fun provideApiService(okHttp: OkHttp): ApiService {
     return ApiSerive(okHttp)
   }
-  ...
  }
- 
-@Module(subcomponent = arrayOf(BrowserSubComponent::class, LoginSubComponent::class))
-object SubcomponentModule {...}
 ```
 
 @[2](component declaration with list of modules)
@@ -218,36 +214,34 @@ object SubcomponentModule {...}
 @[8-9](module declaration)
 @[10](this is a provide method for UserRepository)
 @[12-14](build the dependency)
-@[17](list the subcomponents that will access this graph)
+
 
 ---
-@title[Dagger2 - Application, injection]
+@title[Dagger2 - Application Injection]
 ##### Dagger2 - Application Injection 
 ```kotlin
 class DropApplication : BaseApplication() {
   @Inject
   internal lateinit var apiService: ApiService
-  ...
   override fun onCreate() {
     appComponent = DaggerApplicationComponent
       .builder()
       .create(this)
     appComponent.inject(this)
   }
-  ...
 }
 ```
 @[2-3](dependecy to be injected)
-@[6-8](component creation)
-@[9](application injection)
+@[5-7](component creation)
+@[8](application injection)
 ---
 @title[Dagger2 - Main]
 ##### Dependency Graph - Browser
-![InstalledAPK](assets/images/dagger2-browser.png)
+![DI-Browser](assets/images/dagger2-browser.png)
 
 ---
-@title[Dagger2 - Browser, component]
-##### Dagger2 - Browser Component
+@title[Dagger2 - Browser SubComponent]
+##### Dagger2 - Browser SubComponent
  
 ```kotlin
 @Browser
@@ -278,8 +272,8 @@ object BrowserModule{
 
 ---
 
-@title[Dagger2 - Browser, injection]
-##### Dagger2 - Browser injection
+@title[Dagger2 - Browser Injection]
+##### Dagger2 - Browser Injection
  
 ```kotlin
 class BrowserActivity: AppCompatActivity(){
@@ -318,8 +312,8 @@ class BrowserActivity: AppCompatActivity(){
 ![DI-Components](assets/images/dagger2-components-breakdown.png)
 
 ---
-@title[Dagger2 - Components Dependency]
-##### Dependency Graph - Components
+@title[Dagger2 - Browser Component]
+##### Dependency Graph - Browser Component
 ```kotlin
 @Browser
 @Component(modules = [(BrowserModule::class)], dependencies = [(AppComponent::class)])
@@ -330,6 +324,25 @@ interface BrowserComponent : AndroidInjector<AppCompatActivity> {
   }
 }
 ```
-@[1](SubComponent --> Component; dependency to AppComponent)
+@[2](SubComponent --> Component; dependency to AppComponent)
 @[6](explicity declare to Dagger2 that this builder will accept and AppComponent instance)
+---
+@title[Dagger2 - Browser Injection]
+##### Dependency Graph - Browser Injection
+```kotlin
+class BrowserActivity : AppCompatActivity() {
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    DaggerBrowserComponent
+        .builder()
+        .plus((application as MyApplication).component)
+        .build()
+        .inject(this)
+  }
+}
+```
+@[4-5](the builder is not generate by AppComponent)
+@[6](we have to feed this component, with an AppComponent instance)
+@[7-8](inject as usual)
+
 ---

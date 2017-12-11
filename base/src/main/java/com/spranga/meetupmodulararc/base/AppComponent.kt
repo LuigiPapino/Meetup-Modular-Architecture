@@ -7,7 +7,6 @@ import dagger.Component
 import dagger.Module
 import dagger.Provides
 import dagger.android.AndroidInjector
-import javax.inject.Inject
 import javax.inject.Scope
 import javax.inject.Singleton
 import kotlin.annotation.AnnotationRetention.RUNTIME
@@ -26,6 +25,7 @@ class UserRepository
 interface AppComponent : AndroidInjector<Application> {
   val apiService: ApiService
   val userRepository: UserRepository
+  val okHttp: OkHttp
 }
 
 @Module
@@ -96,11 +96,14 @@ class MyApplication : Application() {
 }
 
 class BrowserActivity : AppCompatActivity() {
-  @Inject
-  internal lateinit var okhttp: OkHttp
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+    DaggerBrowserComponent
+        .builder()
+        .plus((application as MyApplication).component)
+        .create(this)
+        .inject(this)
 
   }
 }
