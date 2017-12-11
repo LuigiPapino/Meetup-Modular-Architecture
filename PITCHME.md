@@ -296,6 +296,7 @@ class BrowserActivity: AppCompatActivity(){
   }
 }
 ```
-@[6](retrieve AppComponent from Application )
-@[7-9](build and inject)
+@[7](retrieve AppComponent from Application )
+@[8-10](build and inject)
+@[11](presenter can be used)
 ---
