@@ -211,9 +211,9 @@ object NetworkModule {
 @[2](component declaration with list of modules)
 @[4-5](dependecy exposed)
 @[7](subcomponent builder)
-@[8-9](module declaration)
-@[10](this is a provide method for UserRepository)
-@[12-14](build the dependency)
+@[9-10](module declaration)
+@[11](this is a provide method for UserRepository)
+@[13-15](build the dependency)
 
 
 ---
