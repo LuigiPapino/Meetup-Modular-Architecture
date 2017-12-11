@@ -190,12 +190,11 @@ dependencies {
 ##### Dagger2 - Application Component 
 ```kotlin
 @Singleton
-@Component(modules = arrayOf(NetworkModule::class, RepositoryModule::class))
+@Component(modules = arrayOf(NetworkModule::class, RepositoryModule::class, SubcomponentModule::class))
 interface ApplicationComponent : AndroidInjector<MyApplication> {
   val userRepository: UserRepository
   val apiService: ApiService
-  ...
-  fun browserSubComponentBuilder(): BrowserSubComponent.Builder
+  fun browserBuilder(): BrowserSubComponent.Builder
 }
 
 @Module
@@ -203,19 +202,24 @@ object NetworkModule {
   @Provides
   @Singleton
   @JvmStatic
-  fun provideUserRepository(sharedPrefs: SharedPreference): UserRepository {
-    return UserRepository(sharedPrefs)
+  fun provideApiService(okHttp: OkHttp): ApiService {
+    return ApiSerive(okHttp)
   }
   ...
  }
+ 
+@Module(subcomponent = arrayOf(BrowserSubComponent::class, LoginSubComponent::class))
+object SubcomponentModule {...}
 ```
 
 @[2](component declaration with list of modules)
-@[4](dependecy exposed)
-@[7](builder for subcomponent)
-@[10-11](module declaration)
-@[12](this is a provide method for UserRepository)
-@[15-17](build the dependency)
+@[4-5](dependecy exposed)
+@[7](subcomponent builder)
+@[8-9](module declaration)
+@[10](this is a provide method for UserRepository)
+@[12-14](build the dependency)
+@[17](list the subcomponents that will access this graph)
+
 ---
 @title[Dagger2 - Application, injection]
 ##### Dagger2 - Application Injection 
@@ -241,4 +245,51 @@ class DropApplication : BaseApplication() {
 ##### Dependency Graph - Browser
 ![InstalledAPK](assets/images/dagger2-browser.png)
 
+---
+@title[Dagger2 - Browser, component]
+##### Dagger2 - Browser Component
+ 
+```kotlin
+@Browser
+@Subcomponent(modules = [(BrowserModule::class)])
+interface BrowserSubComponent : AndroidInjector<AppCompatActivity> {
+  val browserService: BrowserService
+  @Subcomponent.Builder
+  abstract class Builder: AndroidInjector.Builder<AppCompatActivity>()
+}
+
+@Module
+object BrowserModule{
+  @Provides
+  @Browser
+  @JvmStatic
+  fun provideBrowserService(okHttp: OkHttp): BrowserService {
+    return BrowserService(okHttp)
+  }
+}
+```
+@[5-6](builder for this subcomponent to be used in the parent component)
+
+---
+
+---
+@title[Dagger2 - Browser, injection]
+##### Dagger2 - Browser injection
+ 
+```kotlin
+class BrowserActivity: AppCompatActivity(){
+  @Inject
+  internal lateinit var browserService: BrowserService
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    (application as MyApplication).component
+        .browserBuilder()
+        .build()
+        .inject(this)
+  }
+}
+```
+@[6](retrieve AppComponent from Application )
+@[7-9](build and inject)
 ---

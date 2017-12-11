@@ -1,4 +1,8 @@
 apply plugin: 'com.android.feature'
+apply from: '../config.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
 
 android {
   compileSdkVersion 26
@@ -24,4 +28,13 @@ dependencies {
   application project(':app-installed')
   feature project(':feature-home')
   feature project(":feature-details")
+
+  //DAGGER
+  api "com.google.dagger:dagger:$dagger_version"
+  api "com.google.dagger:dagger-android-support:$dagger_version"
+  kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+  //KOTLIN
+  compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
 }
