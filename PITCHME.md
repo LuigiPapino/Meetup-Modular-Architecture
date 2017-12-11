@@ -325,8 +325,8 @@ interface BrowserComponent : AndroidInjector<AppCompatActivity> {
   }
 }
 ```
-@[2](SubComponent --> Component; dependency to AppComponent)
-@[6](explicity declare to Dagger2 that this builder will accept and AppComponent instance)
+@[2-3](SubComponent --> Component; dependency to AppComponent)
+@[7](explicity declare to Dagger2 that this builder will accept and AppComponent instance)
 ---
 @title[Dagger2 - Browser Injection]
 ##### Dependency Graph - Browser Injection
