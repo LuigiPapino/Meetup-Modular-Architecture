@@ -18,14 +18,14 @@
 ---
 @title[Instant App - What? install prompt]
 
-#### Android Apps Without Installation
+#### AIA- Install Prompt
 ![Video](https://www.youtube.com/embed/b-dMmGOB0nA)
 
 
 ---
 @title[Instant App - What? show case]
 
-#### Android Apps Without Installation
+#### AIA - Drop Recipes presentation
 ![Video](https://www.youtube.com/embed/JUykpWHtgec)
 
 
@@ -375,3 +375,30 @@ interface ApplicationComponent : AndroidInjector<MyApplication> {
 @[6](explose okHttp)
 
 ---
+
+@title[Dagger2 - Components split]
+##### Dependency Graph - Components split
+![DI-Components](assets/images/dagger2-base-subcomponent.png)
+
+---
+@title[Dagger2 - Base Injector]
+##### Dagger2 - BaseInjector
+
+```kotlin
+interface BaseInjector<T : BaseApplicationProvider> : AndroidInjector<T> {
+  abstract class Builder<T : BaseApplicationProvider> : dagger.android.AndroidInjector.Builder<T>() {
+  
+    abstract fun plus(component: BaseSubComponent): Builder<T>
+
+    fun inject(activity: T) {
+      plus(activity.baseApplication.provideBaseSubComponent())
+      create(activity).inject(activity)
+    }
+  }
+}
+```
+
+@[1](BaseInjector for any class that can provide an Application instance)
+@[2](BaseInjector.Builder)
+@[4](declaring the BaseSubcomponent instance )
+@[6-9](add base component instance; create component; inject component)
