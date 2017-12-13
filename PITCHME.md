@@ -157,7 +157,7 @@ dependencies {
  
 ---
 @title[Multi-Module]
-# Multi-Module Project
+## Multi-Module Project
 
 - Build SpeedUp
 - Encapsulation
@@ -181,6 +181,9 @@ speeding up your build
 
 #### Modularity and Dagger2
 ![Video](https://www.youtube.com/embed/7ll-rkLCtyk?rel=0&amp;start=1965)
+
+Note:
+33:27 much faster
 
 ---
 @title[Dagger2]
