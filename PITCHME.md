@@ -515,3 +515,11 @@ class RecipeRoute : DropRoute {
 ```
 @[5-12](UriData to store query parameters in the URI)
 @[10-12](store query parameters in an HashMap)
+
+---
+@title[Drop - Architecture]
+# Drop Recipe - Architecture
+
+---
+@title[Dagger2 - Components split]
+![Drop-Architecture](assets/images/dagger2-component-graph.png)
