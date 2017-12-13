@@ -545,5 +545,7 @@ class RecipeRoute : DropRoute {
 @title[Dagger2 - Components split]
 ![Drop-Architecture](assets/images/drop-component-graph-fake.png)
 
+---
 @title[Dagger2 - Build time]
+#### Build time
 ![Drop-Architecture](assets/images/drop-build-time.png)
