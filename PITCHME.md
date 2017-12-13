@@ -402,3 +402,73 @@ interface BaseInjector<T : BaseApplicationProvider> : AndroidInjector<T> {
 @[2](BaseInjector.Builder)
 @[4](declaring the BaseSubcomponent instance )
 @[6-9](add base component instance; create component; inject component)
+
+---
+@title[Route - Why?]
+#### StartActivity in another feature
+```kotlin
+class BrowserActivity : BaseActivity(){
+  fun startLogin(){
+    startActivity(Intent(context, LoginActivity::class.java))
+  }
+}
+```
+
+@[1](BrowserActivity in the Browser feature)
+@[3](start LoginActivity in the Login feature)
+
+---
+@title[Route - How? Kotlin]
+#### StartActivity through a URI
+```kotlin
+class BrowserActivity : BaseActivity(){
+  fun startLogin(){
+    val uri = Uri.Builder()
+      .scheme("https")
+      .authority("getdrop.com")
+      .appendPath("login")
+      .build
+      
+      startActivity(intent(this, uri))
+  }
+}
+```
+@[3-6](build the URI)
+@[8](start activity through the URI)
+
+---
+@title[Route - How? Kotlin]
+#### LoginRoute in the Base module
+```kotlin
+object LoginRoute: BaseRoute{
+  fun startLogin(context: Context){
+    val uri = Uri.Builder()
+      .scheme("https")
+      .authority("getdrop.com")
+      .appendPath("login")
+      .build
+      
+      startActivity(intent(context, uri))
+  }
+}
+```
+
+---
+@title[Route - How? XML]
+#### LoginRoute in the Base module
+```xml
+   <activity...>
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW"/>
+
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+
+        <data 
+            android:scheme="https"
+            android:host="getdrop.com"
+            android:pathPrefix="login"
+            />
+      </intent-filter>
+    </activity>
+```
