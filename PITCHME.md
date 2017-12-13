@@ -486,5 +486,32 @@ object LoginRoute: BaseRoute{
     </activity>
 ```
 
-@[2-5](intent filter with action.View)
-@[7-11](uri served)
+@[2-6](intent filter with action.View)
+@[8-12](uri served)
+
+---
+@title[Route - Complex]
+#### * RecipeRoute with UriData
+```kotlin
+class RecipeRoute : DropRoute {
+
+  enum class Action { SHOW_ABOUT, SHOW_MAKE, QUIT }
+
+  class Data(uri: Uri? = null) : UriData(uri) {
+    constructor(recipeId: String, action: Action = SHOW_ABOUT) : this() {
+      this.recipeId = recipeId
+      this.action = action.toString()
+    }
+    var recipeId by map
+    var action by map
+  }
+
+  companion object {
+     fun start(context: Context, data: Data, bundle: Bundle = Bundle()) {
+      DropRoute.start(context, uri(context, data), bundle)
+    }
+  }
+}
+```
+@[5-12](UriData to store query parameters in the URI)
+@[10-12](store query parameters in an HashMap)
