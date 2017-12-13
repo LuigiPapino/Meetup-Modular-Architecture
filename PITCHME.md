@@ -8,27 +8,14 @@
 <span class="byline">[luigi.papino@gmail.com - I Hate Android]</span>
 
 ---
-
 @title[Instant App - What? email flow]
 
 #### Android Apps Without Installation
 ![Video](https://www.youtube.com/embed/fGdiOeYuORE)
 
-
----
-@title[Instant App - What? install prompt]
-
-#### AIA- Install Prompt
-![Video](https://www.youtube.com/embed/b-dMmGOB0nA)
-
-
----
-@title[Instant App - What? show case]
-
-#### AIA - Drop Recipes presentation
-![Video](https://www.youtube.com/embed/JUykpWHtgec)
-
-
+Note:
+- the system install, open and pass the URL
+- works on Google page result
 ---
 @title[Instant App - Why?]
 ### Remove install friction
@@ -41,6 +28,23 @@
 [1]: https://developer.android.com/stories/instant-apps/vimeo.html
 [2]: https://developer.android.com/stories/instant-apps/nytimes-crossword.html
 
+Note:
+1) Link on the web as Ads or a button on your website
+2) Search on the Google Play Store
+
+---
+@title[Instant App - What? install prompt]
+
+#### AIA- Install Prompt
+![Video](https://www.youtube.com/embed/b-dMmGOB0nA)
+
+
+---
+@title[Instant App - What? show case]
+
+#### * AIA - Drop Recipes presentation
+![Video](https://www.youtube.com/embed/JUykpWHtgec)
+
 ---
 @title[Instant App - How?]
 #### App split by module
@@ -48,6 +52,8 @@
 
 [^3]: https://developer.android.com/topic/instant-apps/getting-started/structure.html "AIA Structure" 
 
+Note:
+Don't need to mantain two different projects
 
 ---
 @title[Instant App - AS How?]
@@ -76,6 +82,8 @@ dependencies {
 @[7](the base feature must know the application module, needed for the `applicationId` and flavors)
 @[8-9](feature modules that this base feature will serve)
 
+Note:
+needed to understand tha packageId
 ---
 @title[Instant App - Installed/Gradle]
 #### app-installed/build.gradle
@@ -127,24 +135,25 @@ dependencies {
 
 ---
 @title[Instant App - APK Installed]
-#### Installed APK
+#### * Installed APK
 ![InstalledAPK](assets/images/aia-apk-installed.png)
 
 ---
 @title[Instant App - APK Instant]
-#### Instant zip
+#### * Instant zip
 ![InstantAPK](assets/images/aia-apk-instant.png)
 
 ---
 @title[Instant App - Issues]
 ### AIA Issues
 - Multi-features not working (fixed last week, Google says)
+- 4MB base+feature size limit
 - Proguard not working
-- Base module resources need to be referenced full-scoped
-- Resources in the feature manifest file has to be in the base module
 - ButterKnife/AndroidAnnotation needs workaround for view-injection
 - Crashlytics has to be applied in the base.gradle
-- 4MB base+feature size limit
+- Base module resources need to be referenced full-scoped
+- Resources in the feature manifest file has to be in the base module
+
  
 ---
 @title[Multi-Module]
