@@ -159,6 +159,9 @@ dependencies {
 @title[Multi-Module]
 # Multi-Module Project
 
+- Build SpeedUp
+- Encapsulation
+
 ---
 @title[Multi-Module - Structure]
 #### AIA not necessary to build a multi-module project 
@@ -170,7 +173,9 @@ dependencies {
 #### Modularity is painful
 ![Video](https://www.youtube.com/embed/7ll-rkLCtyk?rel=0&amp;start=1420)
 
-
+Note:
+Jerome Dochez (Tech Lead Build system Android Studio)
+speeding up your build
 ---
 @title[Multi-Module - Google I/0 2017 Dagger2]
 
