@@ -404,6 +404,10 @@ interface BaseInjector<T : BaseApplicationProvider> : AndroidInjector<T> {
 @[6-9](add base component instance; create component; inject component)
 
 ---
+@title[Route]
+# Route
+
+---
 @title[Route - Why?]
 #### StartActivity in another feature
 ```kotlin
