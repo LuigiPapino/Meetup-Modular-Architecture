@@ -2,7 +2,7 @@
 
 # <span class="gold">Instant App</span>
 
-### Multi-Modular Architecture with Android Gradle Plugin 3.0
+### Modular Architecture with Android Gradle Plugin 3.0
 <br>
 <br>
 <span class="byline">[luigi.papino@gmail.com - I Hate Android]</span>
@@ -147,6 +147,10 @@ dependencies {
 - 4MB base+feature size limit
  
 ---
+@title[Multi-Module]
+# Multi-Module Project
+
+---
 @title[Multi-Module - Structure]
 #### AIA not necessary to build a multi-module project 
 ![MM-AS-Structure](assets/images/mm-structure.png)
@@ -163,6 +167,11 @@ dependencies {
 
 #### Modularity and Dagger2
 ![Video](https://www.youtube.com/embed/7ll-rkLCtyk?rel=0&amp;start=1965)
+
+---
+@title[Dagger2]
+# Dagger2
+## Dependency Injection
 
 ---
 @title[Dagger2 - Definition]
