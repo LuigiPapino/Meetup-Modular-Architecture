@@ -485,3 +485,6 @@ object LoginRoute: BaseRoute{
       </intent-filter>
     </activity>
 ```
+
+@[2-5](intent filter with action.View)
+@[7-11](uri served)
