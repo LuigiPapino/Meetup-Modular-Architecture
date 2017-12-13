@@ -522,4 +522,4 @@ class RecipeRoute : DropRoute {
 
 ---
 @title[Dagger2 - Components split]
-![Drop-Architecture](assets/images/dagger2-component-graph.png)
+![Drop-Architecture](assets/images/drop-component-graph.png)
