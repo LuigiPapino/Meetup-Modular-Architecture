@@ -446,8 +446,8 @@ class BrowserActivity : BaseActivity(){
   }
 }
 ```
-@[3-6](build the URI)
-@[8](start activity through the URI)
+@[3-7](build the URI)
+@[9](start activity through the URI)
 
 ---
 @title[Route - How? Kotlin]
