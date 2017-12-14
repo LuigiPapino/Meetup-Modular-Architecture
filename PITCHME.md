@@ -265,19 +265,15 @@ object NetworkModule {
 ##### Dagger2 - Application Injection 
 ```kotlin
 class MyApplication : BaseApplication() {
-  @Inject
-  internal lateinit var apiService: ApiService
+  lateinit var appComponent: ApplicationComponent 
   override fun onCreate() {
     appComponent = DaggerApplicationComponent
       .builder()
       .create(this)
-    appComponent.inject(this)
   }
 }
 ```
-@[2-3](dependecy to be injected)
-@[5-7](component creation)
-@[8](application injection)
+@[4-6](component creation)
 ---
 
 @title[Dagger2 - Dependency Graph]
@@ -332,7 +328,7 @@ class BrowserActivity: AppCompatActivity(){
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    (application as MyApplication).component
+    (application as MyApplication).appComponent
         .browserBuilder()
         .build()
         .inject(this)
@@ -340,6 +336,7 @@ class BrowserActivity: AppCompatActivity(){
   }
 }
 ```
+@[2-3](dependecy to be injected)
 @[7](retrieve AppComponent from Application )
 @[8-10](build and inject)
 @[11](presenter can be used)
