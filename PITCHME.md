@@ -198,9 +198,9 @@ Note:
 ---
 @title[Multi-Module - Google I/0 2017 Dagger2]
 
-#### Modularity is painful
-> javac is in theory incremental, however as soon you start using annotation processor,
-> we have to turn out the incrementality. Some AP want to see the world.
+#### Modularity  and Dagger2
+> javac is in theory incremental ... Some AP want to see the world.
+
 > Dagger wants to see all the injection points, so if you change only one class we have to recompile everything
 
 > If you split javac in multiple modules, none of them will be incremental, but since they are smaller they are faster
