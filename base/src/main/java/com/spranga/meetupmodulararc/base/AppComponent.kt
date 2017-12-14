@@ -3,6 +3,7 @@ package com.spranga.meetupmodulararc.base
 import android.app.Application
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.RecyclerView
 import dagger.Component
 import dagger.Module
 import dagger.Provides
@@ -25,6 +26,7 @@ interface AppComponent : AndroidInjector<Application> {
   val apiService: ApiService
   val userRepository: UserRepository
   val okHttp: OkHttp
+  val a: RecyclerView
 }
 
 @Module

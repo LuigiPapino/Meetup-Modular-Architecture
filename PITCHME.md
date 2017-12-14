@@ -570,3 +570,11 @@ class RecipeRoute : DropRoute {
 @title[Dagger2 - Build time]
 #### Build time
 ![Drop-Architecture](assets/images/drop-build-time.png)
+
+---
+@title[Q&A]
+##Q&A
+- https://twitter.com/TakilianRueshin
+- luigi.papino@gmail.com
+- https://www.linkedin.com/in/luigipapino/
+
