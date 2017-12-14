@@ -573,7 +573,7 @@ class RecipeRoute : DropRoute {
 
 ---
 @title[Q&A]
-##Q&A
+## Q&A
 - https://twitter.com/TakilianRueshin
 - luigi.papino@gmail.com
 - https://www.linkedin.com/in/luigipapino/
