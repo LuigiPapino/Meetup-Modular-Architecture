@@ -184,6 +184,8 @@ speeding up your build
 > It's gonna be painful if you wanna do this ...
 > However it has a lot of improvement with it
 
+<span class="byline">Jerome Dochez (Tech Lead Build system Android Studio)</span>
+
 ---
 @title[Multi-Module - Google I/0 2017 Dagger2]
 
@@ -192,6 +194,20 @@ speeding up your build
 
 Note:
 33:27 much faster
+
+---
+@title[Multi-Module - Google I/0 2017 Dagger2]
+
+#### Modularity is painful
+> javac is in theory incremental, however as soon you start using annotation processor,
+> we have to turn out the incrementality. Some AP want to see the world.
+> Dagger wants to see all the injection points, so if you change only one class we have to recompile everything
+
+> If you split javac in multiple modules, none of them will be incremental, but since they are smaller they are faster
+
+> You will never get as much parallelism as if you are using multi-module projects
+
+<span class="byline">Jerome Dochez (Tech Lead Build system Android Studio)</span>
 
 ---
 @title[Dagger2]
