@@ -224,12 +224,6 @@ Note:
 
 ---
 
-@title[Dagger2 - Dependency Graph]
-#### Dependency Graph
-![DI-main](assets/images/dagger2-main.png)
-
----
-
 @title[Dagger2 - Application]
 ##### Dependency Graph - Application
 ![DI-Application](assets/images/dagger2-application.png)
@@ -284,6 +278,12 @@ class MyApplication : BaseApplication() {
 @[2-3](dependecy to be injected)
 @[5-7](component creation)
 @[8](application injection)
+---
+
+@title[Dagger2 - Dependency Graph]
+#### Dependency Graph
+![DI-main](assets/images/dagger2-main.png)
+
 ---
 @title[Dagger2 - Main]
 ##### Dependency Graph - Browser
