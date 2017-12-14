@@ -177,6 +177,14 @@ Note:
 Jerome Dochez (Tech Lead Build system Android Studio)
 speeding up your build
 ---
+@title[Multi-Module - Google I/0 2017 Painful]
+
+#### Modularity is painful
+> It sounds very easy, modularity is not easy, I can guarantee.
+> It's gonna be painful if you wanna do this ...
+> However it has a lot of improvement with it
+
+---
 @title[Multi-Module - Google I/0 2017 Dagger2]
 
 #### Modularity and Dagger2
